@@ -1,0 +1,21 @@
+/dts-v1/;
+
+#include "msm8976.dtsi"
+
+/ {
+	model = "QiKU 360 N5";
+	compatible = "360,qk1605", "qcom,msm8976";
+	chassis-type = "handset";
+
+	aliases {
+		serial0 = &blsp1_uart2;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+};
+
+&blsp1_uart2 {
+	status = "okay";
+};
