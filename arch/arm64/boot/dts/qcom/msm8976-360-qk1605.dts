@@ -14,6 +14,21 @@
 	chosen {
 		stdout-path = "serial0:115200n8";
 	};
+
+	reserved-memory {
+		cont-splash@83200000 {
+			reg = <0x0 0x83200000 0x0 (1920 * 1080 * 3)>;
+			no-map;
+		};
+
+		/delete-node/ ext-region@85b00000;
+		/delete-node/ tz-apps@8dd00000;
+		/delete-node/ memory@8da00000;
+		qseecom@84a00000 {
+			reg = <0x0 0x84a00000 0x0 0x1900000>;
+			no-map;
+		};
+	};
 };
 
 &blsp1_uart2 {
