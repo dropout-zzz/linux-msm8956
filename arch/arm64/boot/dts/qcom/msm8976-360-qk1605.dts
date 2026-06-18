@@ -220,3 +220,7 @@
 		};
 	};
 };
+
+&tlmm {
+	gpio-reserved-ranges = <0 4>;
+};
