@@ -38,6 +38,10 @@
 		regulator-always-on;
 		regulator-boot-on;
 	};
+
+	usb_vbus: extcon-usb-dummy {
+		compatible = "linux,extcon-usb-dummy";
+	};
 };
 
 &blsp1_uart2 {
@@ -223,4 +227,16 @@
 
 &tlmm {
 	gpio-reserved-ranges = <0 4>;
+};
+
+&otg {
+	extcon = <&usb_vbus>, <0>;
+	status = "okay";
+};
+
+&usb_hs_phy_8916 {
+	v1p8-supply = <&pm8950_l7>;
+	v3p3-supply = <&pm8950_l13>;
+	extcon = <&usb_vbus>;
+	status = "okay";
 };
