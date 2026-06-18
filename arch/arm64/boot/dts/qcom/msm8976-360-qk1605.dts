@@ -34,3 +34,7 @@
 &blsp1_uart2 {
 	status = "okay";
 };
+
+&xo_board {
+	clock-frequency = <19200000>;
+};
