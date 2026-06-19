@@ -169,8 +169,10 @@
 		};
 
 		pm8950_l10: l10 {
-			regulator-min-microvolt = <3000000>;
-			regulator-max-microvolt = <3000000>;
+			// regulator-min-microvolt = <3000000>;
+			// regulator-max-microvolt = <3000000>;
+			regulator-min-microvolt = <2900000>;
+			regulator-max-microvolt = <2900000>;
 		};
 
 		pm8950_l11: l11 {
