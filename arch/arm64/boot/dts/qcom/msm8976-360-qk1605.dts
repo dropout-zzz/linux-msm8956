@@ -11,6 +11,7 @@
 
 	aliases {
 		serial0 = &blsp1_uart2;
+		mmc0 = &sdhc_1; /* SDC1 eMMC slot */
 	};
 
 	chosen {
@@ -240,5 +241,13 @@
 	v1p8-supply = <&pm8950_l7>;
 	v3p3-supply = <&pm8950_l13>;
 	extcon = <&usb_vbus>;
+	status = "okay";
+};
+
+&sdhc_1 {
+	bus-width = <8>;
+	vmmc-supply = <&pm8950_l8>;
+	vqmmc-supply = <&pm8950_l5>;
+	non-removable;
 	status = "okay";
 };
