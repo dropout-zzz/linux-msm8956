@@ -251,3 +251,22 @@
 	non-removable;
 	status = "okay";
 };
+
+&wcnss {
+	vddpx-supply = <&pm8950_l5>;
+	status = "okay";
+	firmware-name = "qk1605/wcnss.mdt";
+};
+
+&wcnss_iris {
+	compatible = "qcom,wcn3660b";
+	vddxo-supply = <&pm8950_l7>;
+	vddrfa-supply = <&pm8950_l19>;
+	vddpa-supply = <&pm8950_l9>;
+	vdddig-supply = <&pm8950_l5>;
+	status = "okay";
+};
+
+&wcnss_ctrl {
+	firmware-name = "qk1605/WCNSS_qcom_wlan_nv.bin";
+};
